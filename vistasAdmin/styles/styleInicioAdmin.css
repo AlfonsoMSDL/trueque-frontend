@@ -135,3 +135,11 @@ footer {
 .eliminarCategoria:hover{
     cursor: pointer;
 }
+
+.editarUsuario:hover{
+    cursor: pointer;
+}
+
+.eliminarUsuario:hover{
+    cursor: pointer;
+}

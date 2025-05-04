@@ -22,12 +22,12 @@ $(document).ready(function () {
                     <td>
 
                         <!-- Aquí quitamos el input con id="id" y lo sustituimos por el atributo data-id -->
-                        <button type="button" class="editarCategoria" data-id="${usuario.id}" title="Editar" style="background: transparent; border: none">
+                        <button type="button" class="editarUsuario" data-id="${usuario.id}" title="Editar" style="background: transparent; border: none">
                             <img src="./img/iconos/iconoEditar.png" alt="Editar" width="25" height="25" />
                         </button>
 
 
-                        <button type="button" class="eliminarCategoria" data-id="${usuario.id}" title="Eliminar" style="background: transparent; border: none">
+                        <button type="button" class="eliminarUsuario" data-id="${usuario.id}" title="Eliminar" style="background: transparent; border: none">
                             <img src="./img/iconos/iconoEliminar.png" alt="Editar" width="25" height="25" />
                         </button>
 
@@ -49,7 +49,7 @@ $(document).ready(function () {
         window.location.href = `editarCategoria.html?id=${id_categoria}`;
     });
 
-    $(document).on('click', '.eliminarCategoria', function () {
+    $(document).on('click', '.eliminarUsuario', function () {
         Swal.fire({
             title: "¿Estás seguro?",
             text: "No podrás revertir esta acción",
@@ -65,12 +65,12 @@ $(document).ready(function () {
             buttonsStyling: false,
           }).then((result) => {
             if (result.isConfirmed) {
-                const id_categoria = $(this).data('id');  
+                const id_usuario = $(this).data('id');  
               //Incluyo el ajax para poder hacer la solicitud de eliminacion
               $.ajax({
                 type: 'DELETE',
                 contentType: "application/json",
-                url: `http://localhost:8181/api/v1/categorias/${id_categoria}`
+                url: `http://localhost:8181/api/v1/usuarios/${id_usuario}`
               })
               .done(function() {
 
