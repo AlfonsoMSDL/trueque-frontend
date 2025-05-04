@@ -44,9 +44,9 @@ $(document).ready(function () {
         });
 
     // Usamos el atributo data-id para obtener el ID de la categoría
-    $(document).on('click', '.editarCategoria', function () {
-        const id_categoria = $(this).data('id');  // Obtener el ID de la categoría desde el atributo 'data-id'
-        window.location.href = `editarCategoria.html?id=${id_categoria}`;
+    $(document).on('click', '.editarUsuario', function () {
+        const id_usuario = $(this).data('id');  // Obtener el ID de la categoría desde el atributo 'data-id'
+        window.location.href = `editarUsuario.html?id=${id_usuario}`;
     });
 
     $(document).on('click', '.eliminarUsuario', function () {
