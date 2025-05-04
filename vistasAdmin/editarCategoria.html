@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categoría</title>
+    <link rel="stylesheet" href="./styles/stylesCategorias.css">
+    <link rel="stylesheet" href="./styles/sweetalert2.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+    <header style="display: flex; justify-content: left; align-items: center;">
+        <a id="imgBack" style="padding-left: 20px;" href="inicioAdmin.html">
+            <img src="./img/iconos/back.png" alt="Volver">
+        </a>
+        <div id="encabezado" style="padding-left: 30px; padding-top: 0px">
+            <h4 class="font-weight-bold py-3 mb-4" style="color: white; font-size: 30px;">
+                Modificar categoría
+            </h4>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Categoría</h1>
+        <div class="group">
+            <input type="text" id="id" name="id" value="1" style="display:none">
+
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" value="Electrónica">
+            </div>
+
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <input type="text" id="descripcion" name="descripcion" value="Artículos electrónicos y gadgets">
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button type="submit" id="guardarCambios" class="save">Guardar cambios</button>
+            <button type="button" class="cancel">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="./js/editarCategoria.js"></script>
+    <script src="./js/sweetalert2.min.js"></script>
+</body>
+
+</html>

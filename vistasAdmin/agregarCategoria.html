@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categoría</title>
+    <link rel="stylesheet" href="./styles/stylesCategorias.css">
+    <link rel="stylesheet" href="./styles/sweetalert2.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+</head>
+
+<body>
+    <header style="display: flex; justify-content: left; align-items: center;">
+        <a id="imgBack" style="padding-left: 20px;" href="inicioAdmin.html"><img src="./img/iconos/back.png" alt=""></a>
+
+        <div id="encabezado" style="padding-left: 30px; padding-top: 0px">
+
+            <h4 class="font-weight-bold py-3 mb-4" style="color: white; font-size: 30px;">
+                Agregar categoria
+            </h4>
+        </div>
+    </header>
+    <div class="container">
+        <!--<form method="POST" action="/proyecto_web/index.php?action=agregarCategoria">-->
+            <h1>Categoría</h1>
+            <div class="group">
+
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre">
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <input type="text" id="descripcion" name="descripcion">
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button type="submit" id="agregarCategoria" class="save">Agregar Categoría</button>
+                <button type="button" class="cancel">Cancelar</button>
+
+
+            </div>
+        <!--</form>-->
+    </div>
+
+    <script src="./js/agregarCategoria.js"></script>
+    <script src="./js/sweetalert2.min.js"></script>
+    
+</body>
+
+</html>

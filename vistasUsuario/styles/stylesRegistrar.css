@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('/vistasUsuario/img/fondo4.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#registro{
+    width: 550px;
+    height: 480px;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 30px 40px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(25px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+#nombreCompleto{
+    position: relative;
+    display: flex;
+    padding-bottom: 0%;
+    height: 70px;
+}
+
+#Nombre{
+    width: 90%;
+
+}
+
+#Apellido{
+    width: 100%;
+}
+
+
+
+#registro h1{
+    font-size: 35px;
+    text-align: center;
+}
+
+
+#registro .entradaDatos{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin: 30px 0;
+
+}
+
+.entradaDatos input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none; /* Quita el contorno */
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+
+    color: white;
+    font-size: 16px;
+
+    padding: 20px 45px 20px 20px;
+}
+
+.entradaDatos input::placeholder{
+    color: white;
+
+}
+
+
+
+#registro a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#registro a:hover{
+    text-decoration: underline;
+}
+
+#registro #btnRegistrar{
+    width: 100%;
+    height: 35px;
+    background-color: #fff;
+    border: none;
+    border: outset;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+
+}
+
+#registro .iniciarSesion{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro</title>
+    <link rel="stylesheet" href="./styles/stylesRegistrar.css"/>
+    <link rel="stylesheet" href="./styles/sweetalert2.min.css">
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+  </head>
+  <body>
+    <div id="registro">
+      <!--<form method="POST" action="">-->
+        <h1 id="ttlRegistro">Registro</h1>
+
+        <div id="nombreCompleto">
+
+          <div class="entradaDatos">
+            <input
+              type="text"
+              name="nombre"
+              id="nombre"
+              placeholder="Nombre"
+              required
+            />
+          </div>
+
+          <div class="entradaDatos">
+            <input
+              type="text"
+              name="apellido"
+              id="apellido"
+              placeholder="Apellido"
+              required
+            />
+          </div>
+
+
+        </div>
+
+        <!--<div class="entradaDatos">
+          <input
+            type="number"
+            name="telefono"
+            id="Telefono"
+            placeholder="Teléfono"
+            required
+          />
+        </div>-->
+
+        <div class="entradaDatos">
+          <input
+            type="email"
+            name="correo"
+            id="correo"
+            placeholder="Correo"
+            required
+          />
+        </div>
+
+        <div class="entradaDatos">
+          <input
+            type="password"
+            name="clave"
+            id="clave"
+            placeholder="Contraseña"
+            required
+          />
+        </div>
+
+        <button type="submit" id="btnRegistrar">Registrar</button>
+
+        <div class="iniciarSesion">
+          <p>¿Ya tiene una cuenta? <a href="login.html">Iniciar sesion</a></p>
+        </div>
+      <!--</form>-->
+    </div>
+
+
+    <script src="./js/registro.js"></script>
+    <script src="./js/sweetalert2.min.js"></script>
+  </body>
+</html>

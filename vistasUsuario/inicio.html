@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trueque Estudiantil</title>
+    <link rel="stylesheet" href="./styles/stylesInicio.css" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <h1><b>TRUEQUE ESTUDIANTIL</b></h1>
+        <div class="auth-links">
+          <a href="registro.html">Registrarse</a> |
+          <a href="login.html">Ingresar</a>
+        </div>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar" />
+      </div>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="#" onclick="showSection('inicio')"
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a href="#" onclick="showSection('misArticulos')"
+              >Mis articulos</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      <section id="inicio" class="section"></section>
+      <section id="misArticulos" class="section"></section>
+      
+    </main>
+
+    <script src="./js/inicioUsuario.js"></script>
+  </body>
+</html>

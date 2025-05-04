@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Productos</title>
+    <link rel="stylesheet" href="./styles/stylesAgregarArticulo.css"/> 
+
+    <link rel="stylesheet" href="./styles/sweetalert2.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Agrega el producto nuevo</h2>
+        <form>
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" placeholder="Escribir nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio</label>
+                <input type="number" id="precio" step="0.01" placeholder="Escribir precio" required>
+            </div>
+            <div class="form-group">
+                <label for="categoria">Categoría</label>
+                <select id="categoria">
+                    <option value="" disabled selected>Seleccionar categoría</option>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" rows="3" placeholder="Escribir descripción"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="ruta_imagen">Imagen</label>
+                <input type="file" id="imagen" accept="image/*" required>
+            </div>
+            <div class="button-group">
+                <button type="submit" class="btn save" id="agregar" >Guardar</button>
+                <button type="reset" class="btn cancel">Limpiar</button>
+                <button type="button" class="btn back" onclick="window.location.href='/proyecto_web/vista/inicioUsuario.php';">Regresar</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="./js/articulo.js"></script>
+    <script src="./js/sweetalert2.min.js"></script>
+</body>
+</html>
+
