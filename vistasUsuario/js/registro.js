@@ -9,14 +9,13 @@ $(document).ready(function(){
         repetirClave = $('#repetir_clave').val();
 
         $.ajax({
-            data: JSON.stringify( { //Datos a enviar
+            data:{ //Datos a enviar
                     "nombre" : nombre,
                     "apellido" : apellido,
                    "correo" : correo,
                    "clave": clave,
                    "repetirClave":repetirClave
-            }),
-            contentType: "application/json",
+            },
             type: "POST",
             url: "http://localhost:8181/api/v1/auth/registrar"
         })
