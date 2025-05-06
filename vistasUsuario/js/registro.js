@@ -6,19 +6,22 @@ $(document).ready(function(){
         apellido = $('#apellido').val();
         correo = $('#correo').val();
         clave = $('#clave').val();
+        repetirClave = $('#repetir_clave').val();
 
         $.ajax({
             data: JSON.stringify( { //Datos a enviar
                     "nombre" : nombre,
                     "apellido" : apellido,
                    "correo" : correo,
-                   "clave": clave
+                   "clave": clave,
+                   "repetirClave":repetirClave
             }),
             contentType: "application/json",
             type: "POST",
             url: "http://localhost:8181/api/v1/auth/registrar"
         })
-        .done(function () {
+        .done(function (response) {
+            console.log(response)
             Swal.fire({
                 text:"Agregado correctamente",
                 icon: "success",
