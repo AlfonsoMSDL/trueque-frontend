@@ -3,11 +3,13 @@ $(document).ready(function () {
   $("#inicio").load("articulosPublicos.html");
   $("#misArticulos").load("misArticulos.html");
 
+  token = JSON.parse(localStorage.getItem("token"));
 
 
   const ruta = "http://localhost:8181/api/v1/categorias";
   let contenidoCategorias;
   $.ajax({
+    headers:{"Authorization": `Bearer ${token.jwt}`},
     url: ruta,
     method: "GET",
     dataType: "json",

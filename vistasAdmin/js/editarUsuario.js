@@ -6,7 +6,9 @@ $(document).ready(function () {
 
         //Ahora solicito al back el usuario que quiero editar para mostrar su informacion
 
+        token = JSON.parse(localStorage.getItem("token"));
         $.ajax({
+            headers:{"Authorization": `Bearer ${token.jwt}`},
             method:"GET",
             dataType:"json",
             url:`http://localhost:8181/api/v1/usuarios/${id}` 
@@ -32,6 +34,7 @@ $(document).ready(function () {
         console.log(correo);
 
         $.ajax({
+            headers:{"Authorization": `Bearer ${token.jwt}`},
             data: {
                 "nombre":nombre,
                 "apellido":apellido,

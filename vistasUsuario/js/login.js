@@ -23,7 +23,11 @@ $(document).ready(function () {
             const partes = token.jwt.split("."); // [header, payload, signature]
 
             // 3. Decodificar el payload (que es la parte [1])
-            const payload = JSON.parse(atob(partes[1]));
+            const payload = JSON.parse(atob(partes[1])); //Guarda un objeto
+            console.log(JSON.stringify(token));
+
+            //Guardo en la memoria de navegador el token para poder usarlo en otras vistas y js
+            localStorage.setItem("token",JSON.stringify(token));
 
             
             ruta = "";

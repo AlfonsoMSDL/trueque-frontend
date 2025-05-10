@@ -1,7 +1,10 @@
 $(document).ready(function () {
     const ruta = "http://localhost:8181/api/v1/categorias";
+    //Obtengo el token del usuario logueado
+    token = JSON.parse(localStorage.getItem("token"));
 
     $.ajax({
+            headers:{"Authorization": `Bearer ${token.jwt}`},
             url: ruta,
             method: "GET",
             dataType: "json"
@@ -67,6 +70,7 @@ $(document).ready(function () {
                 const id_categoria = $(this).data('id');  
               //Incluyo el ajax para poder hacer la solicitud de eliminacion
               $.ajax({
+                headers:{"Authorization": `Bearer ${token.jwt}`},
                 type: 'DELETE',
                 contentType: "application/json",
                 url: `http://localhost:8181/api/v1/categorias/${id_categoria}`
