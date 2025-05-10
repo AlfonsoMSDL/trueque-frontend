@@ -1,41 +1,51 @@
-$(document).ready(function(){
+$(document).ready(function () {
+  $(document).on("click", "#btnLogin", function () {
+    correo = $('#correo').val();
+    clave = $('#clave').val();
 
-    $(document).on('click','#btnLogin', function(){
+    $.ajax({
+      contentType: "application/json",
+      dataType: "json",
+      data: JSON.stringify({
+        "correo": correo,
+        "clave": clave,
+      }),
+      type: "POST",
+      url: "http://localhost:8181/api/v1/auth/login",
+    })
+      .done(function (token) {
+        Swal.fire({
+          text: "Inicio exitoso",
+          icon: "success",
+          title: "Inicio de Sesión",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            const partes = token.jwt.split("."); // [header, payload, signature]
 
-        email = $('#Correo').val();
-        pass = $('#Contrasena').val();
+            // 3. Decodificar el payload (que es la parte [1])
+            const payload = JSON.parse(atob(partes[1]));
 
-        $.ajax({ // sin utilizar XML,... usar json
-            data: { //Datos a enviar
-                   "email" : email,
-                   "pass": pass
-            },
-            type: "POST",
-            dataType: "json",
-            url: "/proyecto_web/controlador/ajax_login.php"
-        })
-        .done(function(response) {
             
-            Swal.fire({
-                text:response.msg,
-                icon: response.type,
-                title: "Inicio de Sesión"
+            ruta = "";
+            if(payload.rol === "USUARIO"){
+                ruta = "http://localhost:5500/vistasUsuario/inicio.html";
+            }
+            else{
+                ruta = "http://localhost:5500/vistasAdmin/inicioAdmin.html";
+            }
+            $(location).attr('href',ruta); //Redireccinar a una ruta
 
-            }).then((result) => {
-                if (result.isConfirmed) {
-                $(location).attr('href',response.ruta); //Redireccinar a una ruta
-                }
-              })
-            
-        })
-        .fail(function(jqXHR, textStatus, errorThrown) {  // Si encuentra algun problema
-
-            Swal.fire({
-                title: "ALERTA",
-                icon: "error",
-                text: "La solicitud ha fallado: " +  errorThrown
-            });
+          }
         });
-        
-    });
-})
+      })
+      .fail(function (jqXHR, textStatus, errorThrown) {
+        // Si encuentra algun problema
+
+        Swal.fire({
+          title: "ALERTA",
+          icon: "error",
+          text: "La solicitud ha fallado: " + textStatus,
+        });
+      });
+  });
+});
