@@ -19,6 +19,7 @@ $(document).ready(function () {
           icon: "success",
           title: "Inicio de Sesión",
         }).then((result) => {
+          
           if (result.isConfirmed) {
             const partes = token.jwt.split("."); // [header, payload, signature]
 
@@ -28,6 +29,9 @@ $(document).ready(function () {
 
             //Guardo en la memoria de navegador el token para poder usarlo en otras vistas y js
             localStorage.setItem("token",JSON.stringify(token));
+
+            //Guardo el token pero como json legible
+            localStorage.setItem("tokenObj",JSON.stringify(payload));
 
             
             ruta = "";

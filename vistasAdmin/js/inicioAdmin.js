@@ -20,28 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
   showSection(activeSection);
 });
 
-/*$(document).ready(function () {
-  function editarCategoria(id_categoria) {
-    window.location.href = `editarCategoria.html?id=${id_categoria}`;
-    getCategoria(id_categoria);
-  }
+//Para cuando cierre la sesion
+$(document).ready(function() {
+  $(document).on('click','#cerrarSesion',function() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("tokenObj");
+    
+    $(location).attr('href','http://localhost:5500/vistasUsuario/login.html');
+  });
+  
+});
 
-  function getCategoria(id_categoria) {
-    $.ajax({
-      url: `http://localhost:8181/api/v1/categorias/${id_categoria}`,
-      method: "GET",
-      dataType: "json",
-    })
-    .done(function(respuesta){
-      id = respuesta.id;
-      nombre = respuesta.nombre;
-      descripcion = respuesta.descripcion;
-
-
-      $('#nombre').val(nombre);
-      $('#descripcion').val(descripcion);
-
-
-    });
-  }
-});*/

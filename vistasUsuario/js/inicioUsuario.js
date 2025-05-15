@@ -3,7 +3,33 @@ $(document).ready(function () {
   $("#inicio").load("articulosPublicos.html");
   $("#misArticulos").load("misArticulos.html");
 
+  //Mostrar el nombre del usuario si esta registrado
+
+  $('.auth-links').hide();
+  $('.auth-user').hide();
   token = JSON.parse(localStorage.getItem("token"));
+  tokenObj =JSON.parse(localStorage.getItem("tokenObj"));
+ 
+
+  if(tokenObj != null){
+    console.log(tokenObj.nombre);
+    $('.auth-user').show();
+    $('#nombreUsuarioLog').text(tokenObj.nombre);
+  }
+  else{
+    $('.auth-links').show();
+  }
+
+  //Para cuando cierre la sesion
+  $(document).on('click','#cerrarSesion',function() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("tokenObj");
+    
+    $(location).attr('href','login.html');
+  });
+
+
+
 
 
   const ruta = "http://localhost:8181/api/v1/categorias";
@@ -57,3 +83,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const activeSection = localStorage.getItem("seccionSeleccionada") || "inicio"; // Sección por defecto
   showSection(activeSection);
 });
+
+
