@@ -16,6 +16,7 @@ $(document).ready(function () {
         .done(function (respuesta) {
             nombre = $('#nombre').val(respuesta.nombre);
             apellido = $('#apellido').val(respuesta.apellido);
+            telefono = $('#telefono').val(respuesta.telefono);
             correo = $('#correo').val(respuesta.correo);
         });
 
@@ -27,17 +28,17 @@ $(document).ready(function () {
 
         nombre = $('#nombre').val();
         apellido = $('#apellido').val();
+        telefono = $('#telefono').val();
         correo = $('#correo').val();
 
-        console.log(nombre);
-        console.log(apellido);
-        console.log(correo);
+        console.log(telefono);
 
         $.ajax({
             headers:{"Authorization": `Bearer ${token.jwt}`},
             data: {
                 "nombre":nombre,
                 "apellido":apellido,
+                "telefono":telefono,
                 "correo":correo
             },
             method:"PUT",

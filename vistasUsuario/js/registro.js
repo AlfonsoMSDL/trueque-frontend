@@ -4,6 +4,7 @@ $(document).ready(function(){
 
         nombre = $('#nombre').val();
         apellido = $('#apellido').val();
+        telefono = $('#telefono').val();
         correo = $('#correo').val();
         clave = $('#clave').val();
         repetirClave = $('#repetir_clave').val();
@@ -12,6 +13,7 @@ $(document).ready(function(){
             data:{ //Datos a enviar
                     "nombre" : nombre,
                     "apellido" : apellido,
+                    "telefono": telefono,
                    "correo" : correo,
                    "clave": clave,
                    "repetirClave":repetirClave

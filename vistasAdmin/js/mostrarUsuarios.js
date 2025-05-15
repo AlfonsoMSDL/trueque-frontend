@@ -19,6 +19,7 @@ $(document).ready(function () {
                 const fila = `
                 <tr>
                     <td>${usuario.nombre} ${usuario.apellido}</td>
+                    <td>${usuario.telefono}</td>
                     <td>${usuario.correo}</td>
                     <td>
 

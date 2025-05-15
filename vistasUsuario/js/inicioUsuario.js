@@ -12,7 +12,7 @@ $(document).ready(function () {
  
 
   if(tokenObj != null){
-    console.log(tokenObj.nombre);
+    console.log(tokenObj);
     $('.auth-user').show();
     $('#nombreUsuarioLog').text(tokenObj.nombre);
   }
