@@ -7,7 +7,6 @@ $(document).ready(function () {
         const idCategoria = $("#categoria").val();
         const descripcion = $("#descripcion").val();
         const imagen = $("#imagen")[0].files[0];
-        const idPropietario = 1;
 
         // Validación básica (puedes extenderla)
         if (!nombre || !idCategoria || !descripcion || !imagen) {
@@ -22,8 +21,7 @@ $(document).ready(function () {
         const articulo = {
             nombre: nombre,
             idCategoria: idCategoria,
-            descripcion: descripcion,
-            idPropietario: idPropietario
+            descripcion: descripcion
         };
 
          // Crear FormData y adjuntar partes

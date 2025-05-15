@@ -1,12 +1,14 @@
 $(document).ready(function(){
-
+    
     $(document).on('click','#agregarCategoria', function(){
-
+        token = JSON.parse(localStorage.getItem("token"));
+        tokenObj =JSON.parse(localStorage.getItem("tokenObj"));
         nombre = $('#nombre').val();
         descripcion = $('#descripcion').val();
 
         $.ajax({
             url: "http://localhost:8181/api/v1/categorias",
+            headers:{"Authorization": `Bearer ${token.jwt}`},
             type: "POST",
             data: {
                 "nombre": nombre,
