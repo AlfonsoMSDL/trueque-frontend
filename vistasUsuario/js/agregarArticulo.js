@@ -31,9 +31,13 @@ $(document).ready(function () {
          formData.append("articulo", new Blob([JSON.stringify(articulo)], { type: "application/json" }));
          formData.append("file", imagen);
 
+        token = JSON.parse(localStorage.getItem("token"));
+        tokenObj =JSON.parse(localStorage.getItem("tokenObj"));
+
         // Enviar la solicitud AJAX
         $.ajax({
             url: "http://localhost:8181/api/v1/articulos",
+            headers:{"Authorization": `Bearer ${token.jwt}`},
             method: "POST",
             data: formData,
             contentType: false,
