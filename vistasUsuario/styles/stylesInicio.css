@@ -109,11 +109,19 @@ body {
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
-    max-width: 120px;
+    max-width: 190px;
+  }
+
+  .article .imagen{
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20%;
   }
   
-  .article img {
-    width: 100%;
+  .article .imagen img {
+    width: 90%;
     border-radius: 10px;
   }
   
@@ -173,23 +181,36 @@ body {
   }
   
 
-  .intercambiar-btn {
+  .editar-btn{
+    background-color: #00ABE4 ;
+  }
+
+  .eliminar-btn {
+    background-color: #FF4747;
+  }
+  .editar-btn , .eliminar-btn {
     display: inline-block;
     margin: 10px auto 0 auto; /* espacio superior y centrado */
     width: 90%;
-    background-color: #008ebd;
     color: white;
-    text-decoration: none;
     padding: 10px;
-    border-radius: 10px;
+    border: none;
+    border-radius: 5px;
     font-weight: bold;
     text-align: center;
     transition: background-color 0.3s ease;
   }
   
-  .intercambiar-btn:hover {
-    background-color: #0072a0; /* color un poco más oscuro al pasar el mouse */
+  .editar-btn:hover{
+    cursor: pointer;
+    background-color: #0072a0;
   }
+
+  .eliminar-btn:hover {
+    cursor: pointer;
+    background-color: #c51010;
+  }
+  
   
 
   /*Estilos para el dezplazamiento horizontal del las categorias*/

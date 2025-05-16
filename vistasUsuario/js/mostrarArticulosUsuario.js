@@ -1,39 +1,107 @@
 $(document).ready(function () {
 
     token = JSON.parse(localStorage.getItem("token"));
-    tokenObj =JSON.parse(localStorage.getItem("tokenObj"));
-  
+    tokenObj = JSON.parse(localStorage.getItem("tokenObj"));
+
     const ruta = "http://localhost:8181/api/v1/articulos/mis-articulos"; //Obtener los articulos de un usuario
     const rutaBack = "http://localhost:8181/api/v1/";
     let contenidoArticulos;
     $.ajax({
-      url: ruta,
-      headers:{"Authorization": `Bearer ${token.jwt}`},
-      method: "GET",
-      dataType: "json",
-    })
-      .done(function (data) {
-          const articulos = Array.isArray(data.content) ? data.content : data.content.data; // Ajustamos si es necesario
-        console.log(articulos);
-        contenidoArticulos = $(".allArticles");
-        articulos.forEach(function (articulo) {
-          const articuloInsertar = `<div class="article">
-                                        <img src="${rutaBack+articulo.urlImagen}" alt="Imagen articulo" />
+            url: ruta,
+            headers: {
+                "Authorization": `Bearer ${token.jwt}`
+            },
+            method: "GET",
+            dataType: "json",
+        })
+        .done(function (data) {
+            const articulos = Array.isArray(data.content) ? data.content : data.content.data; // Ajustamos si es necesario
+            console.log(articulos);
+            contenidoArticulos = $(".allArticles");
+            articulos.forEach(function (articulo) {
+                const articuloInsertar = `<div class="article">
+                                        <div class="imagen">
+                                            <img src="${rutaBack+articulo.urlImagen}" alt="Imagen articulo" />
+                                        </div>
+                                        
                                         <p>${articulo.nombre}</p>
-                                        <a href="#" class="intercambiar-btn">Intercambiar</a>
+                                        <button data-id="${articulo.id}" class="editar-btn">Editar</button>
+                                        <button data-id="${articulo.id}" class="eliminar-btn">Eliminar</button>
                                     </div>`;
 
-          contenidoArticulos.append(articuloInsertar);
-          console.log(rutaBack+articulo.urlImagen);
+                contenidoArticulos.append(articuloInsertar);
+                console.log(rutaBack + articulo.urlImagen);
+            });
+        })
+        .fail(function () {
+            contenidoCategorias.append(
+                "<p>No hay ninguna categoria para mostrar.</p>"
+            );
         });
-      })
-      .fail(function () {
-        contenidoCategorias.append(
-          "<p>No hay ninguna categoria para mostrar.</p>"
-        );
-      });
-  
-  
-  
-  });
-  
+
+
+    //Funcion para eliminar articulo
+    $(document).on("click",".eliminar-btn",function () {
+        
+        const idArticulo = $(this).data();
+        console.log(idArticulo.id);
+        token = JSON.parse(localStorage.getItem("token"));
+
+
+
+
+        Swal.fire({
+            title: "¿Estás seguro?",
+            text: "No podrás revertir esta acción",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Sí, eliminar",
+            cancelButtonText: "No, cancelar",
+            reverseButtons: true,
+            customClass: {
+                confirmButton: "btn btn-success",
+                cancelButton: "btn btn-danger",
+            },
+            buttonsStyling: false,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const id_categoria = $(this).data('id');
+                //Incluyo el ajax para poder hacer la solicitud de eliminacion
+                $.ajax({
+                        url: `http://localhost:8181/api/v1/articulos/${idArticulo.id}`,
+                        headers: {
+                            "Authorization": `Bearer ${token.jwt}`
+                        },
+                        method: "DELETE",
+                    })
+                    .done(function () {
+                        location.reload();
+                    })
+                    .fail(function (jqXHR, textStatus, errorThrown) { // Si encuentra algun problema
+
+                        Swal.fire({
+                            title: "ALERTA",
+                            icon: "error",
+                            text: "La solicitud ha fallado: " + errorThrown
+                        });
+                    })
+
+
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                Swal.fire({
+                    title: "Cancelado",
+                    text: "La operación fue cancelada",
+                    icon: "error",
+                    customClass: {
+                        confirmButton: "btn btn-success",
+                    },
+                });
+            }
+        });
+
+
+    });
+
+
+
+});
