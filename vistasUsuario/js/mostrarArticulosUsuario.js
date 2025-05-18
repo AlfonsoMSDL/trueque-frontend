@@ -17,7 +17,7 @@ $(document).ready(function () {
         .done(function (data) {
             const articulos = Array.isArray(data.content) ? data.content : data.content.data; // Ajustamos si es necesario
             console.log(articulos);
-            contenidoArticulos = $(".allArticles");
+            contenidoArticulos = $(".allArticlesByUser");
             articulos.forEach(function (articulo) {
                 const articuloInsertar = `<div class="article">
                                         <div class="imagen">
@@ -40,11 +40,18 @@ $(document).ready(function () {
         });
 
 
-    //Funcion para eliminar articulo
+
+    //Editar articulo
+    $(document).on("click",".editar-btn",function () {
+        const idArticulo = $(this).data();
+        window.location.href=`editarArticulo.html?id=${idArticulo.id}`;
+    });
+
+
+    //Eliminar articulo
     $(document).on("click",".eliminar-btn",function () {
         
         const idArticulo = $(this).data();
-        console.log(idArticulo.id);
         token = JSON.parse(localStorage.getItem("token"));
 
 
