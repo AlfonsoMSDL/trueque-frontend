@@ -18,6 +18,8 @@ $(document).ready(function () {
   }
   else{
     $('.auth-links').show();
+    $('#misArticulosLink').hide();
+
   }
 
   //Para cuando cierre la sesion
@@ -25,7 +27,7 @@ $(document).ready(function () {
     localStorage.removeItem("token");
     localStorage.removeItem("tokenObj");
     
-    $(location).attr('href','login.html');
+    $(location).attr('href','inicio.html');
   });
 
 
