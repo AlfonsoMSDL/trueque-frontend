@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Productos</title>
+    <link rel="stylesheet" href="./styles/stylesAgregarArticulo.css"/> 
+
+    <link rel="stylesheet" href="./styles/sweetalert2.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Editar articulo</h2>
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" placeholder="Escribir nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="categoria">Categoría</label>
+                <select id="categoria">
+                    <option value="" disabled>Seleccionar categoría</option>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" rows="3" placeholder="Escribir descripción"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="ruta_imagen">Imagen</label>
+                <input type="file" id="imagen" accept="image/*">
+            </div>
+            <div class="button-group">
+                <button type="submit" class="btn save" id="editar" >Guardar</button>
+                <button type="reset" class="btn cancel">Limpiar</button>
+                <button type="button" class="btn back" onclick="window.location.href='inicio.html';">Regresar</button>
+            </div>
+
+    </div>
+
+    
+    <script src="./js/editarArticulo.js"></script>
+    <script src="./js/sweetalert2.min.js"></script>
+</body>
+</html>
+
