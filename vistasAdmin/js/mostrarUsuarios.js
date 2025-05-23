@@ -19,8 +19,9 @@ $(document).ready(function () {
                 const fila = `
                 <tr>
                     <td>${usuario.nombre} ${usuario.apellido}</td>
-                    <td>${usuario.telefono}</td>
                     <td>${usuario.correo}</td>
+                    <td>${usuario.telefono}</td>
+                    
                     <td>
 
                         <!-- Aquí quitamos el input con id="id" y lo sustituimos por el atributo data-id -->
