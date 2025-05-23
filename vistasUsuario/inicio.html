@@ -15,6 +15,18 @@
         <div class="auth-user">
           <p id="nombreUsuarioLog"></p>
           <button id="cerrarSesion">Cerrar sesión</button>
+          <!-- Botón -->
+          <button class="menu-btn" onclick="toggleMenu()">☰ Menú</button>
+
+          <!-- Sidebar (ahora a la derecha) -->
+          <div id="mySidebar" class="sidebar">
+            <a href="inicio.html">Inicio</a>
+            <a href="usuarios.html">Usuarios</a>
+            <a href="articulos.html">Artículos</a>
+            <a href="categorias.html">Categorías</a>
+            <a href="reportes.html">Reportes</a>
+            <a href="configuracion.html">Configuración</a>
+          </div>
         </div>
         <div class="auth-links">
           <a href="registro.html">Registrarse</a> |
@@ -22,18 +34,27 @@
         </div>
       </div>
       <div class="search-bar">
-        <input type="text" placeholder="Buscar" />
+        <div class="search-content">
+          <img class="search-icon" src="./img/search.png" alt="">
+          <input class="search-input" type="search" placeholder="Buscar" />
+          <button class="bnt-search">
+            <img class="arrow-icon" src="./img/flechaDerecha.png" alt="">
+          </button>
+
+        </div>
+        
       </div>
 
       <nav>
         <ul>
           <li>
-            <a href="#" onclick="showSection('inicio')"
-              >Inicio</a
-            >
+            <a href="#" onclick="showSection('inicio')">Inicio</a>
           </li>
           <li>
-            <a href="#" id="misArticulosLink" onclick="showSection('misArticulos')"
+            <a
+              href="#"
+              id="misArticulosLink"
+              onclick="showSection('misArticulos')"
               >Mis articulos</a
             >
           </li>
@@ -42,14 +63,29 @@
     </header>
 
     <main>
-
       <section id="inicio" class="section"></section>
       <section id="misArticulos" class="section"></section>
-      
+      <section id="verArticulo" class="section"></section>
     </main>
 
-    <script src="./js/inicioUsuario.js"></script>
-    <script src="./js/mostrarArticulosUsuario.js"></script>
-    <script src="./js/sweetalert2.min.js"></script>
+    <footer>
+      <p>&copy; Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const sidebar = document.getElementById("mySidebar");
+        if (sidebar.style.width === "250px") {
+          sidebar.style.width = "0";
+        } else {
+          sidebar.style.width = "250px";
+        }
+      }
+    </script>
+
+<script src="./js/inicioUsuario.js"></script>
+<script src="./js/mostrarArticulosUsuario.js"></script>
+<script src="./js/mostrarArticulosPublicos.js"></script>
+<script src="./js/sweetalert2.min.js"></script>
   </body>
 </html>
