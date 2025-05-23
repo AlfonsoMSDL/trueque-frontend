@@ -16,7 +16,6 @@ $(document).ready(function () {
         })
         .done(function (data) {
             const articulos = Array.isArray(data.content) ? data.content : data.content.data; // Ajustamos si es necesario
-            console.log(articulos);
             contenidoArticulos = $(".allArticlesByUser");
             articulos.forEach(function (articulo) {
                 const articuloInsertar = `<div class="article">
@@ -30,7 +29,6 @@ $(document).ready(function () {
                                     </div>`;
 
                 contenidoArticulos.append(articuloInsertar);
-                console.log(rutaBack + articulo.urlImagen);
             });
         })
         .fail(function () {
