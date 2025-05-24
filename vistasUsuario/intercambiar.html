@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trueque Estudiantil</title>
+
+  <link rel="stylesheet" href="./styles/sweetalert2.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+  <link rel="stylesheet" href="./styles/stylesIntercambiar.css" />
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <h1>Intercambiar</h1>
+    </div>
+
+  </header>
+
+  <main class="contenedor">
+
+    <div class="articulos">
+      <div id="articuloDeseado" class="columna">
+        <p class="titulo-columna">Artículo deseado</p>
+        <img src="" alt="Artículo" class="icono" />
+        <p class="nombre-articulo"></p>
+
+      </div>
+
+      <div class="intercambio-icono">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+          <path fill="#00374A"
+            d="M14.293 2.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414-1.414L16.586 8H5a1 1 0 0 1 0-2h11.586l-2.293-2.293a1 1 0 0 1 0-1.414m-4.586 10a1 1 0 0 1 0 1.414L7.414 16H19a1 1 0 1 1 0 2H7.414l2.293 2.293a1 1 0 0 1-1.414 1.414l-4-4a1 1 0 0 1 0-1.414l4-4a1 1 0 0 1 1.414 0" />
+          </svg>
+      </div>
+
+      <div id="articuloOfrecido" class="columna">
+        <p class="titulo-columna">Tu artículo</p>
+        <img src="" alt="Tu artículo" class="icono" />
+        <p class="nombre-articulo"></p>
+
+      </div>
+    </div>
+
+    <div class="btn-intercambiar-container">
+      <button class="btn-cancelar">Cancelar</button>
+      <button class="btn-intercambiar">Solicitar intercambio</button>
+    </div>
+  </main>
+
+
+</body>
+
+<script src="./js/sweetalert2.min.js"></script>
+<script src="./js/intercambiar.js"></script>
+
+</html>

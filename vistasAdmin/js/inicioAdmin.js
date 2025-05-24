@@ -25,8 +25,9 @@ $(document).ready(function() {
   $(document).on('click','#cerrarSesion',function() {
     localStorage.removeItem("token");
     localStorage.removeItem("tokenObj");
+    localStorage.removeItem("seccionSeleccionada");
     
-    $(location).attr('href','http://localhost:5500/vistasUsuario/login.html');
+    $(location).attr('href','../index.html');
   });
   
 });

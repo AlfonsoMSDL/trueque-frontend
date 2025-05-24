@@ -1,8 +1,8 @@
 $(document).ready(function () {
   // Se cargan los archivos html en las secciones
-  $("#inicio").load("articulosPublicos.html");
-  $("#misArticulos").load("misArticulos.html");
-  $("#verArticulo").load("verArticulo.html");
+  $("#inicio").load("./vistasUsuario/articulosPublicos.html");
+  $("#misArticulos").load("./vistasUsuario/misArticulos.html");
+  $("#verArticulo").load("./vistasUsuario/verArticulo.html");
 
   // Obtén los parámetros de la URL
   const params = new URLSearchParams(window.location.search);
@@ -33,8 +33,9 @@ $(document).ready(function () {
   $(document).on("click", "#cerrarSesion", function () {
     localStorage.removeItem("token");
     localStorage.removeItem("tokenObj");
+    localStorage.removeItem("seccionSeleccionada");
 
-    $(location).attr("href", "inicio.html");
+    $(location).attr("href", "index.html");
   });
 
   const ruta = "http://localhost:8181/api/v1/categorias";
@@ -184,7 +185,7 @@ function showSection(sectionId) {
 
   if (id != null) {
     if (sectionId == "inicio" || sectionId == "misArticulos") {
-      window.location.href = "inicio.html";
+      window.location.href = "index.html";
     }
   }
 
@@ -220,6 +221,8 @@ function cargarArticuloIndividual(id) {
     console.log(respuesta);
     $(".contenido h2").text(respuesta.nombre);
     $(".contenido p").text(respuesta.descripcion);
+    $(".idArticulo").val(respuesta.id);
+    $(".idPropietario").val(respuesta.idPropietario);
     $(".product-image").attr("src", rutaBack + respuesta.urlImagen);
     
 
@@ -236,3 +239,16 @@ function cargarArticuloIndividual(id) {
 
   });
 }
+
+window.onload = function () {
+  const params = new URLSearchParams(window.location.search);
+  // Obtener el valor del parámetro 'id'
+  let id = params.get("id");
+  let mostrarArticulo = localStorage.getItem("mostrarArticulo");
+  if(mostrarArticulo != null){
+    cargarArticuloIndividual(id);
+    localStorage.removeItem("mostrarArticulo");
+  }
+
+  
+};

@@ -25,21 +25,21 @@ $(document).ready(function () {
 
             // 3. Decodificar el payload (que es la parte [1])
             const payload = JSON.parse(atob(partes[1])); //Guarda un objeto
-            console.log(JSON.stringify(token));
 
             //Guardo en la memoria de navegador el token para poder usarlo en otras vistas y js
             localStorage.setItem("token",JSON.stringify(token));
 
             //Guardo el token pero como json legible
             localStorage.setItem("tokenObj",JSON.stringify(payload));
+            localStorage.removeItem("seccionSeleccionada"); //Borra la seccion seleccionada anteriormente para que inicie desde el inicio de pagina
 
             
             ruta = "";
             if(payload.rol === "USUARIO"){
-                ruta = "http://localhost:5500/vistasUsuario/inicio.html";
+                ruta = "../index.html";
             }
             else{
-                ruta = "http://localhost:5500/vistasAdmin/inicioAdmin.html";
+                ruta = "../vistasAdmin/inicioAdmin.html";
             }
             $(location).attr('href',ruta); //Redireccinar a una ruta
 
