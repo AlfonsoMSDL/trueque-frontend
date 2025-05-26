@@ -400,6 +400,18 @@ footer p {
 }
 
 /*Estilos para la vista de ver articulo*/
+
+.reportar-link{
+  color: #0077cc;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.reportar-link:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .principal {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;

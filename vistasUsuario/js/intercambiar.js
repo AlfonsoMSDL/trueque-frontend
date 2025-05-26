@@ -10,6 +10,8 @@ $(document).ready(function () {
             "href",
             `../index.html?id=${datosIntercambio.datosArticuloDeseado.idArticuloIntercambio}`
         );
+
+        localStorage.removeItem("datosIntercambio");
         localStorage.setItem("mostrarArticulo", true);
     });
 
@@ -21,6 +23,10 @@ $(document).ready(function () {
     $.get(`http://localhost:8181/api/v1/articulos/${idArticuloIntercambio}`, function (articulo) {
        $("#articuloDeseado img").attr("src", rutaBack + articulo.urlImagen);
        $("#articuloDeseado .nombre-articulo").text(articulo.nombre);
+    });
+    $.get(`http://localhost:8181/api/v1/articulos/${idArticuloOfrecido}`, function (articulo) {
+       $("#articuloOfrecido img").attr("src", rutaBack + articulo.urlImagen);
+       $("#articuloOfrecido .nombre-articulo").text(articulo.nombre);
     });
 
 })

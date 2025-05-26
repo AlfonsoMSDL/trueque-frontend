@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestionar Reportes</title>
-    <link rel="stylesheet" href="./styles/styleReporte.css" />
+
+    <link rel="stylesheet" href="./styles/sweetalert2.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <link rel="stylesheet" href="./styles/styleListarReportes.css" />
   </head>
   <body>
     <div class="barraSuperior">
@@ -24,24 +28,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Juancho Talarga</td>
-            <td>
-              <img
-                src="img/iconos/image.png"
-                alt="Imagen artículo"
-              /><br />
-              Nombre
-            </td>
-            <td>
-              Esta es una descripción de un artículo que no me gustó porque ajá
-              y entonces
-            </td>
-            <td>ACTIVO</td>
-            <td><button class="responder-btn">Responder</button></td>
-          </tr>
         </tbody>
       </table>
     </div>
+
+    <footer>
+      <p>&copy; 2023 Sistema de Gestión</p>
+    </footer>
   </body>
+
+  <script src="./js/sweetalert2.min.js"></script>
+  <script src="./js/reportes.js"></script>
+
 </html>

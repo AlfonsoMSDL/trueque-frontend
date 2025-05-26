@@ -1,4 +1,7 @@
 body {
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto;
   font-family: Arial, sans-serif;
   background-color: #f8f8f8;
   margin: 0px;
@@ -93,4 +96,15 @@ img {
     display: flex;
     justify-content: center;
     background-color: #f4f4f4;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #35424a;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+
 }

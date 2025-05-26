@@ -1,145 +1,145 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
 header {
-    background: #001f3f;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-
-    
+  background: #001f3f;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
 }
 
-
-
 nav {
-    background: white;
-    color: white;
-    padding: 10px 0;
+  background: white;
+  color: white;
+  padding: 0;
+  margin: 0;
+
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+  display: inline;
+  margin: 0 15px;
 }
 
 nav ul li a {
-    color:#001f3f;
+  color: #001f3f;
 
-    text-decoration: none;
+  text-decoration: none;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 main {
-    padding: 20px;
+  padding: 20px;
 }
 
 .section {
-    display: none; /* Ocultar todas las secciones por defecto */
+  display: none; /* Ocultar todas las secciones por defecto */
 }
 
 footer {
-    text-align: center;
-    padding: 10px 0;
-    background: #35424a;
-    color: #ffffff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-
+  text-align: center;
+  padding: 10px 0;
+  background: #35424a;
+  color: #ffffff;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 .table {
-    width: 100%;
-    margin-bottom: 1rem;
-    color: #858796;
-    border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #858796;
+  border-collapse: collapse;
 }
 
 .table th,
 .table td {
-    padding: .75rem;
-    vertical-align: top;
-    border-top: 1px solid #e3e6f0;
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #e3e6f0;
 }
 
 .table thead th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #e3e6f0;
-    background-color: #f8f9fc;
-    color: #4e73df;
+  vertical-align: bottom;
+  border-bottom: 2px solid #e3e6f0;
+  background-color: #f8f9fc;
+  color: #4e73df;
 }
 
 .table tbody tr {
-    transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
 
 .table tbody tr:hover {
-    background-color: #f1f1f1; /* Color de fondo al pasar el mouse */
+  background-color: #f1f1f1; /* Color de fondo al pasar el mouse */
 }
 
-.table tbody+tbody {
-    border-top: 2px solid #e3e6f0;
+.table tbody + tbody {
+  border-top: 2px solid #e3e6f0;
 }
 
 .table-bordered {
-    border: 1px solid #e3e6f0;
+  border: 1px solid #e3e6f0;
 }
 
 .table-bordered th,
 .table-bordered td {
-    border: 1px solid #e3e6f0;
+  border: 1px solid #e3e6f0;
 }
 
 .table-bordered thead th {
-    border-bottom-width: 2px;
+  border-bottom-width: 2px;
 }
 
 .table-responsive {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .card {
-    border: 1px solid #e3e6f0;
-    border-radius: .35rem;
-    background-color: #fff;
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+  background-color: #fff;
 }
 
 .card-header {
-    background-color: #f8f9fc;
-    border-bottom: 1px solid #e3e6f0;
-    padding: .75rem 1.25rem;
+  background-color: #f8f9fc;
+  border-bottom: 1px solid #e3e6f0;
+  padding: 0.75rem 1.25rem;
 }
 
 .card-body {
-    padding: 1.25rem;
+  padding: 1.25rem;
 }
 
-.editarCategoria:hover{
-    cursor: pointer;
+.editarCategoria:hover {
+  cursor: pointer;
 }
 
-.eliminarCategoria:hover{
-    cursor: pointer;
+.eliminarCategoria:hover {
+  cursor: pointer;
 }
 
-.editarUsuario:hover{
-    cursor: pointer;
+.editarUsuario:hover {
+  cursor: pointer;
 }
 
-.eliminarUsuario:hover{
-    cursor: pointer;
+.eliminarUsuario:hover {
+  cursor: pointer;
 }

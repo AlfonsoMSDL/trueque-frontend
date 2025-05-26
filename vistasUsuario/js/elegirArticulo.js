@@ -9,6 +9,7 @@ $(document).ready(function () {
       `../index.html?id=${datosArticuloDeseado.idArticuloIntercambio}`
     );
     localStorage.setItem("mostrarArticulo", true);
+    localStorage.removeItem("datosArticuloDeseado");
   });
 
   token = JSON.parse(localStorage.getItem("token"));

@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+header {
+    background-color: #001f3f;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+.volver:hover{
+  cursor: pointer;
+}
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 1% 0;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 14px;
+  }
+
+body {
+  background-color: #e6ebfc;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 750px;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  min-height: 70dvh;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor_izquierdo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contenedor_derecho {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor_img {
+  width: 300px;
+}
+
+.imagen_articulo {
+  width: 100%;
+  height: 100%;
+}
+
+.nombre_articulo {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.formulario_reportar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+}
+
+.label_form_motivos {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.textarea_input {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  padding: 10px;
+}
+
+.btn-reportar {
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  border-style: none;
+  border: none;
+  background-color: #00ABE4;
+  color: #fff;
+  cursor: pointer;
+}
+.btn-reportar:hover{
+   background-color: #0585b0;
+}

@@ -116,6 +116,7 @@ $(document).ready(function () {
 
   //Fltrar por nombre
   $(document).on("click", ".bnt-search", function () {
+    $(".featured-articles").hide();
     $(".allArticles").empty();
     const nombre = $(".search-input").val();
     const rutaBack = "http://localhost:8181/api/v1/";
@@ -174,10 +175,22 @@ $(document).ready(function () {
     showSection("verArticulo"); // Muestra la sección
     cargarArticuloIndividual(idArticulo); // Llama manualmente la función
   });
+
+  //desde la vista de ver articulo, redireccionar a reportar cuando le de click en su enlace
+  $(document).on("click", ".reportar-link", function () {
+    // Obtén los parámetros de la URL
+    const params = new URLSearchParams(window.location.search);
+    // Obtener el valor del parámetro 'id'
+    let id = params.get("id");
+    $(location).attr("href",`vistasUsuario/reportarArticulo.html?id=${id}`);
+  })
 });
+
+
 
 //Para mostrar la seccion que se elija
 function showSection(sectionId) {
+
   // Obtén los parámetros de la URL
   const params = new URLSearchParams(window.location.search);
   // Obtener el valor del parámetro 'id'

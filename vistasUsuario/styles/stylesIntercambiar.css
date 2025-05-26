@@ -20,7 +20,7 @@ body {
     padding: 15px 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   
@@ -113,6 +113,14 @@ body {
   background-color: #fa2c3a
 }
 
-#articuloDeseado {
-  
+.btn-intercambiar:hover{
+  background-color: #0585b0;
+}
+
+.btn-cancelar:hover{
+  background-color: #c80d1a
+}
+
+#articuloDeseado img, #articuloOfrecido img{
+width: 150px;
 }
