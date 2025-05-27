@@ -22,18 +22,7 @@ header .atras {
   color: #ffffff;
 }
 
-.btn-desactivar {
-  background-color: #9cd3d6;
-  color: #ffffff;
-  border: 1px solid #9cd3d6;
-}
 
-
-.btn-descartar {
-  background-color: #9cd;
-  color: #ffffff;
-  border: 1px solid #9cd3d6;
-}
 
 
 header {
@@ -72,8 +61,8 @@ header {
 }
 
 .imagen img {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   margin: auto;
 }
 
@@ -105,7 +94,6 @@ header {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-top: 30px;
 }
 
 .acciones button {
@@ -114,8 +102,36 @@ header {
   border-radius: 8px;
 
   cursor: pointer;
-  transition: background 0.2s;
 }
+
+.btn-activar {
+  background-color: #1ceb26;
+  color: #ffffff;
+  border: none;
+}
+.btn-activar:hover{
+  background-color: #09bf15
+}
+
+.btn-desactivar {
+  background-color: #fa2c3a;
+  color: #ffffff;
+  border: none;
+}
+.btn-desactivar:hover{
+  background-color: #c80d1a
+}
+
+.btn-descartar {
+  background-color: #00ABE4;
+  color: #ffffff;
+  border: none;
+}
+.btn-descartar:hover{
+  background-color: #0585b0;
+}
+
+
 
 footer {
 
