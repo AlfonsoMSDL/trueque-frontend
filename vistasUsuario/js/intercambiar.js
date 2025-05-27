@@ -29,4 +29,8 @@ $(document).ready(function () {
        $("#articuloOfrecido .nombre-articulo").text(articulo.nombre);
     });
 
+    $(document).on("click", ".btn-intercambiar", function () {
+        
+    });
+
 })

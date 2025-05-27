@@ -42,7 +42,7 @@ $(document).ready(function () {
     //Editar articulo
     $(document).on("click",".editar-btn",function () {
         const idArticulo = $(this).data();
-        window.location.href=`http://localhost/trueque-frontend/vistasUsuario/editarArticulo.html?id=${idArticulo.id}`;
+        window.location.href=`./vistasUsuario/editarArticulo.html?id=${idArticulo.id}`;
     });
 
 
