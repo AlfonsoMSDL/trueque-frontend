@@ -13,20 +13,35 @@
       <div class="header-content">
         <h1><b>TRUEQUE ESTUDIANTIL</b></h1>
         <div class="auth-user">
-          <p id="nombreUsuarioLog"></p>
-          <button id="cerrarSesion">Cerrar sesión</button>
-          <!-- Botón -->
-          <button class="menu-btn" onclick="toggleMenu()">☰ Menú</button>
-
-          <!-- Sidebar (ahora a la derecha) -->
-          <div id="mySidebar" class="sidebar">
-            <a href="index.html">Inicio</a>
-            <a href="usuarios.html">Usuarios</a>
-            <a href="articulos.html">Artículos</a>
-            <a href="categorias.html">Categorías</a>
-            <a href="reportes.html">Reportes</a>
-            <a href="configuracion.html">Configuración</a>
+          <div class="menu-container">
+            <a class="menu-btn" onclick="notificacion()"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g fill="none"><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="#00374A" d="M12 2a7 7 0 0 1 2.263.374a4.5 4.5 0 0 0 4.5 7.447L19 9.743v2.784a1 1 0 0 0 .06.34l.046.107l1.716 3.433a1.1 1.1 0 0 1-.869 1.586l-.115.006H4.162a1.1 1.1 0 0 1-1.03-1.487l.046-.105l1.717-3.433a1 1 0 0 0 .098-.331L5 12.528V9a7 7 0 0 1 7-7m5.5 1a2.5 2.5 0 1 1 0 5a2.5 2.5 0 0 1 0-5M12 21a3 3 0 0 1-2.83-2h5.66A3 3 0 0 1 12 21"/></g></svg></a>
+            <div id="notificacion-1" class="notificacion-content"></div>
           </div>
+          
+          <div class="menu-container">
+            <a class="menu-btn" onclick="notificacion2()"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g fill="none"><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="#00374A" d="M12 2a7 7 0 0 0-7 7v3.528a1 1 0 0 1-.105.447l-1.717 3.433A1.1 1.1 0 0 0 4.162 18h15.676a1.1 1.1 0 0 0 .984-1.592l-1.716-3.433a1 1 0 0 1-.106-.447V9a7 7 0 0 0-7-7m0 19a3 3 0 0 1-2.83-2h5.66A3 3 0 0 1 12 21"/></g></svg></a>
+            <div id="notificacion-2" class="notificacion-content"></div>
+          </div>
+
+          
+            <a class="menu-btn" onclick="perfil()"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="#00374A" d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2S7.5 4.019 7.5 6.5M20 21h1v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1z"/></svg></a>
+        
+          
+          
+          
+          <div class="menu-container">
+            <!-- Botón -->
+            <a class="menu-btn" onclick="toggleMenu()"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="#00374A" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z"/></svg></a>
+
+            <!-- Sidebar (ahora a la derecha) -->
+            <div id="dropdown" class="dropdown-content">
+              <a href="index.html">Historial intercambios</a>
+              <a href="reportes.html">Reportes</a>
+              <a href="configuracion.html">Configuración</a>
+              <a id="cerrarSesion">Cerrar sesión</a>
+            </div>
+          </div>
+  
         </div>
         <div class="auth-links">
           <a href="./vistasUsuario/registro.html">Registrarse</a> |
@@ -35,7 +50,6 @@
       </div>
       <div class="search-bar">
         <div class="search-content">
-          <img class="search-icon" src="./vistasUsuario/img/search.png" alt="">
           <input class="search-input" type="search" placeholder="Buscar" />
           <button class="bnt-search">
             <img class="arrow-icon" src="./vistasUsuario/img/flechaDerecha.png" alt="">
@@ -74,14 +88,18 @@
 
     <script>
       function toggleMenu() {
-        const sidebar = document.getElementById("mySidebar");
-        if (sidebar.style.width === "250px") {
-          sidebar.style.width = "0";
-        } else {
-          sidebar.style.width = "250px";
-        }
+        const dropdown = document.getElementById("dropdown");
+        dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
       }
-    </script>
+      function notificacion() {
+        const dropdown = document.getElementById("notificacion-1");
+        dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+      }
+      function notificacion2() {
+        const dropdown = document.getElementById("notificacion-2");
+        dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+      }
+    </script> 
 
 <script src="vistasUsuario/js/inicioUsuario.js"></script>
 <script src="vistasUsuario/js/mostrarArticulosUsuario.js"></script>

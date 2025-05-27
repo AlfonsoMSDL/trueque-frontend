@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f0f8ff;
+  background-color: #ffffff;
 }
 
 .header {
@@ -19,31 +19,18 @@ body {
 .header-content h1 {
   margin: 0;
   font-size: 24px;
-  color: #0077cc;
+  color: #00374A;
 }
 
 .auth-user {
   display: flex;
-}
-
-#cerrarSesion {
-  color: #0077cc;
-  background: transparent; /* Sin fondo */
-  border: none;
-  cursor: pointer;
-}
-
-.auth-user p,
-button {
-  margin-left: 10px;
-  color: #0077cc;
-  font-weight: bold;
+  gap: 20px;
 }
 
 .auth-links a {
   margin-left: 10px;
   text-decoration: none;
-  color: #0077cc;
+  color: #00374A;
   font-weight: bold;
 }
 
@@ -92,7 +79,7 @@ button {
   height: 30px;
   padding: 0px;
   margin: 0px 50px;
-  color: #0077cc;
+  color: #00374A;
 }
 
 .categories {
@@ -291,7 +278,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #0077cc;
+  color: #00374A;
   font-size: 18px;
   text-decoration: none;
 }
@@ -341,43 +328,44 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
+.menu-container {
+  position: relative;
+  display: inline-block;
+}
+
 /*Estilos para el menu desplegable*/
 .menu-btn {
-  background-color: #333;
-  color: white;
-  padding: 10px 15px;
   border: none;
   cursor: pointer;
-  position: absolute;
   top: 10px;
   right: 10px;
   z-index: 2;
 }
 
 /* Sidebar oculto inicialmente desde la derecha */
-.sidebar {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  top: 0;
-  right: 0;
-  background-color: #444;
-  overflow-x: hidden;
-  transition: 0.3s;
-  padding-top: 60px;
-  z-index: 1;
-}
+.dropdown-content, .notificacion-content {
+    position: absolute;
+    top: 100%;           
+    right: 0;
+    display: none;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    padding: 10px;
+    z-index: 1;
+    border-radius: 6px;
+  }
 
-.sidebar a {
+.dropdown-content a {
   display: block;
   padding: 15px 20px;
   text-decoration: none;
-  color: white;
+  color: #00374A;
   transition: 0.2s;
 }
 
-.sidebar a:hover {
-  background-color: #555;
+.dropdown-content a:hover {
+  background-color: #001a23;
 }
 
 .content {
@@ -414,12 +402,11 @@ footer p {
 
 .principal {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: white;
   display: flex;
   justify-content: center;
-  align-items: start;
-  height: 100vh;
-  margin: 0;
+  align-items: center;
+  margin: 5% 0;
   padding: 0;
   gap: 40px;
 }
@@ -474,18 +461,17 @@ footer p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 20%;
-  height: 30%;
   text-align: center;
   background-color: #e9f1fa;
+  padding: 5% 3%;
 }
 
 .btn-intercambiar,
 .btn-perfil {
+  padding: 10px 15px;
   background-color: #00abe4;
   color: white;
   border: none;
-  padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -507,4 +493,5 @@ footer p {
 
 .btn-intercambiar {
   margin-top: 50px;
+  margin-left: 20px;
 }
