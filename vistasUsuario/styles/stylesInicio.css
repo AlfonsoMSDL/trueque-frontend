@@ -345,6 +345,7 @@ nav ul li a:hover {
 /* Sidebar oculto inicialmente desde la derecha */
 .dropdown-content, .notificacion-content {
     position: absolute;
+    width: 400px;
     top: 100%;           
     right: 0;
     display: none;
@@ -366,6 +367,7 @@ nav ul li a:hover {
 
 .dropdown-content a:hover {
   background-color: #001a23;
+  color: white;
 }
 
 .content {
