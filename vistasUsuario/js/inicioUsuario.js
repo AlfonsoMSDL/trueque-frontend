@@ -198,6 +198,7 @@ function showSection(sectionId) {
 
   if (id != null) {
     if (sectionId == "inicio" || sectionId == "misArticulos") {
+      location.reload();
       window.location.href = "index.html";
     }
   }
