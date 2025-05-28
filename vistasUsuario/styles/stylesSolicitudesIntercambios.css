@@ -1,0 +1,155 @@
+body {
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden; /* Elimina scroll horizontal */
+}
+
+h1 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.back {
+  text-decoration: none;
+  font-size: 1.2em;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.barraSuperior {
+  background-color: #001f3f;
+  margin-bottom: 0px;
+  height: 100px;
+  margin-top: 0px;
+  padding-top: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.barraSuperior h1 {
+  color: white;
+  padding: 0px;
+  margin-left: 20px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.barraSuperior img {
+  width: 25px;
+  height: 25px;
+  margin-left: 20px;
+}
+
+.contenido {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Exactamente 3 columnas */
+  gap: 20px;
+  padding: 30px;
+  margin: 30px auto;
+  max-width: 1800px; /* Ancho máximo para controlar el tamaño */
+}
+
+.intercambioItem {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px; /* Reducido de 20px */
+  flex-wrap: wrap;
+  padding: 15px; /* Reducido de 20px */
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Incluye padding en el ancho total */
+  min-width: 0; /* Permite que el elemento se contraiga */
+  height: 300px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.intercambioItem:hover{
+  transform: scale(1.05);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.intercambioItem img{
+    height: 30%;
+}
+
+.columna {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+
+.titulo-columna {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.icono {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.nombre-articulo {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.intercambio-icono {
+  align-self: center;
+  margin-top: 40px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background: #35424a;
+  color: #ffffff;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsive para pantallas más pequeñas */
+@media (max-width: 1200px) {
+  .contenido {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 15px;
+    margin: 15px auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .contenido {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    margin: 10px auto;
+  }
+
+  .intercambioItem {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .columna {
+    width: 80%;
+    margin-bottom: 15px;
+  }
+
+  .intercambio-icono {
+    margin-top: 10px;
+  }
+}
